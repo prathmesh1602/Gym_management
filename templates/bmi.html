@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+ {% block title %} Login Here {% endblock title %} 
+{% block head %}
+<h1>Calculate Your BMI Here</h1>
+
+
+  
+    <div class="col-md-1"></div>
+
+    <form action="{% url 'bmi' %}" method="POST">
+      {% csrf_token %}
+  
+      <input class="form-control" type="number" id="weight"placeholder="Enter Weight"name="weight" required>
+      <br><br>
+      
+      <input class="form-control "  type="number" id="height"placeholder="Enter Height" name="height" required>
+      <br><br>
+      <div class="d-grid ">
+      <button class="btn btn-warning" type="submit">Calculate</button>
+    </div>
+  </form>
+  
+    </div>
+    
+    <div class="col-md-5">
+      <img src="static/assets/img/BMI.jpg" class="rounded mx-auto d-block" alt="...">
+      <h1 id="result" class="result">{{ result }}</h1>
+     
+      
+      
+    </div>
+   
+   
+    
+
+
+
+{% endblock head %}

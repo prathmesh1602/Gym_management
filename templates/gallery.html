@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %} Gallery {% endblock title %} 
+{% block head %}
+
+<div class="card">
+  <img src="static/assets/img/pimage3.jpg" class="card-img-center" alt="..." />
+</div>
+
+
+{% endblock head %} 
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    {% for post in posts %}
+    <div class="col-4">
+      <div class="card">
+        <img src="{{post.img.url}}" class="card-img-center" alt="..." />
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock body %}
